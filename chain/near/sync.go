@@ -28,6 +28,10 @@ func (c *Chain) sync() error {
 				time.Sleep(constant.RetryInterval)
 				continue
 			}
+			if result == "" {
+				time.Sleep(constant.RetryInterval)
+				continue
+			}
 
 			data := StreamerMessage{}
 			err = json.Unmarshal([]byte(result), &data)
