@@ -7,6 +7,7 @@ import (
 	"github.com/mapprotocol/filter/constant"
 	"github.com/mapprotocol/filter/core"
 	"github.com/mapprotocol/filter/pkg/mysql"
+	"github.com/mapprotocol/filter/pkg/redis"
 	"github.com/mapprotocol/filter/pkg/utils"
 	"github.com/urfave/cli/v2"
 	"os"
@@ -29,6 +30,7 @@ func main() {
 		if err != nil {
 			return err
 		}
+		redis.Init(cfg.Other.Redis)
 		mysql.Init(cfg.Other.Db)
 		utils.Init(cfg.Other.Env, cfg.Other.MonitorUrl)
 		chainers, err := chain.Init(cfg.Chains)

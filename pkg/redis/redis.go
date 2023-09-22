@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	ListKey     = "near_messsage_log"
+	ListKey     = "near_message_log"
 	redisClient *redis.Client
 	once        = &sync.Once{}
 )

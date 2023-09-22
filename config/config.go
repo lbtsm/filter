@@ -27,6 +27,7 @@ type RawChainConfig struct {
 type Construction struct {
 	MonitorUrl string `json:"monitor_url,omitempty"`
 	Etcd       string `json:"etcd,omitempty"`
+	Redis      string `json:"redis,omitempty"`
 	Env        string `json:"env,omitempty"`
 	Db         string `json:"db,omitempty"`
 }
